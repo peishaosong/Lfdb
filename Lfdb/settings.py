@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Lfdbdemo',
     'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Lfdbdemo',
+
 
 ]
 
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -126,3 +127,35 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# STATICFILES_DIRS = [
+#      os.path.join(BASE_DIR, "static"),
+#
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+#
+
+# 登录页粒子动画，默认开启，False关闭
+# SIMPLEUI_LOGIN_PARTICLES = True
+
+# 让simpleui 不要收集相关信息
+SIMPLEUI_ANALYSIS = True
+
+# 自定义simpleui 菜单
+
+
+
+
+SIMPLEUI_ICON = {
+    '系统管理': 'fab fa-apple',
+    '员工管理': 'fas fa-user-tie',
+    '厂别管理': 'fas fa-building',
+    '岗位管理': 'fas fa-chess-knight',
+    '人事管理': 'fas fa-book'
+}
+
+# 指定simpleui 是否以脱机模式加载静态资源，为True的时候将默认从本地读取所有资源，即使没有联网一样可以。适合内网项目
+# 不填该项或者为False的时候，默认从第三方的cdn获取
+
+SIMPLEUI_STATIC_OFFLINE = False
