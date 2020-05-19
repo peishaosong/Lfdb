@@ -16,13 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path, include
+from Lfdbdemo.views import index
+from Lfdbdemo import views as Lfdbdemo_views
 from Lfdbdemo import views
 admin.site.site_title = '拉菲德堡家居集团有限公司'
 admin.site.site_header = '拉菲德堡员工管理系统'
 
 urlpatterns = [
 
-    path('admin/', admin.site.urls),
+    path(r'admin/', admin.site.urls),
+    url(r'', index, name='index')
+
+
+
+
 
 
 ]

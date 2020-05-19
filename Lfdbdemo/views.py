@@ -1,5 +1,9 @@
+#coding:utf-8
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from django.http import HttpResponse
+from .models import person
 # Create your views here.
-def Lfdbdemo(request):
-    return HttpResponse('admin')
+
+def index(request):
+    persons = person.objects.all()
+    return render(request, 'index.html', context={'persons': persons})
